@@ -212,7 +212,7 @@ body {
     width: 100%;
     height: 600px;
     display: flex;
-    background-image: linear-gradient(rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0.8)), url('/Image/vecteezy_topographic-background-and-texture-abstraction-with-place_16828112.jpg');
+    background-image: linear-gradient(rgb(0, 0, 0, 0.8), rgb(0, 0, 0, 0.8)), url('Image/vecteezy_topographic-background-and-texture-abstraction-with-place_16828112.jpg');
     justify-content: center;
     align-items: center;
 }
@@ -483,7 +483,7 @@ body {
     width: 92%;
     height: 99%;
     border-radius: 20px;
-    background: linear-gradient(#080708b7, #080708b7), url("/Image/Blackkjkj.svg");
+    background: linear-gradient(#080708b7, #080708b7), url("Image/Blackkjkj.svg");
 
     display: flex;
     background-repeat: no-repeat;
@@ -534,7 +534,7 @@ body {
     width: 400px;
     border-radius: 25px;
     height: 400px;
-    background-image: url("/Image/Untitled\ design.png");
+    background-image: url("Image/Untitled\ design.png");
     background-size: cover;
     background-repeat: no-repeat;
 }
