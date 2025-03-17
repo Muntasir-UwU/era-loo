@@ -1,7 +1,8 @@
-// Set the date we're counting down to
+AOS.init();
+
+
 var countDownDate = new Date("Jan 27, 2025 15:37:25").getTime();
 
-// Update the count down every 1 second
 var x = setInterval(function () {
   var now = new Date().getTime();
   var distance = countDownDate - now;
@@ -127,4 +128,3 @@ gsap.timeline({
   .set(split.words, { duration: 0.3, color: "#EEF0F2", stagger: 0.1 }, 0.1)
   .to(allMasks, { width: "0%", duration: 1, stagger: 0.5 });
 
-AOS.init();
