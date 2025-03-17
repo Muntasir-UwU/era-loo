@@ -30,35 +30,24 @@ function showNextSlide() {
   const offset = -slideIndex * 100;
   sliderTrack.style.transform = `translateX(${offset}%)`;
 }
+
 setInterval(showNextSlide, 3000);
 
 function checkDeviceSize() {
   const element = document.querySelector(".text");
   const viewportWidth = window.innerWidth;
+
   if (viewportWidth >= 280 && viewportWidth <= 319) {
     element.classList.add("active");
   } else {
     element.classList.remove("active");
   }
 }
+
 window.addEventListener("resize", checkDeviceSize);
 window.addEventListener("load", checkDeviceSize);
 
 gsap.registerPlugin(ScrollTrigger);
-
-document.querySelectorAll("[data-aos]").forEach((elem) => {
-  gsap.from(elem, {
-    opacity: 1,
-    y: 50,
-    duration: 1,
-    scrollTrigger: {
-      trigger: elem,
-      start: "top 80%",
-      end: "bottom 20%",
-      toggleActions: "play none none reverse",
-    },
-  });
-});
 
 let menu = gsap.timeline({
   scrollTrigger: {
@@ -71,9 +60,8 @@ let menu = gsap.timeline({
 menu.to(".nav", { background: "black" });
 
 let paraTexts = new SplitType("#tex", { type: "chars" });
-gsap.from(paraTexts.chars, {
-  color: "#32E875",
-  stagger: 0.08,
+
+let tolo = gsap.timeline({
   scrollTrigger: {
     trigger: "#text-h",
     start: "top 90%",
@@ -81,11 +69,11 @@ gsap.from(paraTexts.chars, {
     scrub: 1,
   },
 });
+tolo.to(paraTexts.chars, { color: "#32E875", stagger: 0.08 });
 
-gsap.from(".char", {
-  y: 20,
-  opacity: 0,
-  stagger: 0.05,
+const myText2 = new SplitType("#h1");
+
+let text = gsap.timeline({
   scrollTrigger: {
     trigger: "#buung",
     start: "0% center",
@@ -93,3 +81,49 @@ gsap.from(".char", {
     scrub: 1,
   },
 });
+text.to(".char", { y: 0, stagger: 0.05 });
+
+let box = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".g-shit",
+    start: "top 90%",
+    end: "100% 90%",
+    scrub: 1,
+  },
+});
+box.to("#time", { width: "100%", borderRadius: "0px" });
+
+let box1 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".g-shit",
+    start: "170% 5%",
+    end: "250% 5%",
+    scrub: 1,
+  },
+});
+box1.to("#time", { width: "92%", borderRadius: "20px" });
+
+AOS.init();
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".g-shit",
+    scrub: 0.5,
+    pin: ".g-shit",
+    start: "top 0%",
+    end: "162% center",
+  },
+});
+
+const split = new SplitType("#gtext", { types: "words" });
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: "#gtext",
+    start: "top 10%",
+    end: "bottom 10%",
+    scrub: 0.5,
+  },
+})
+  .set(split.words, { duration: 0.3, color: "#EEF0F2", stagger: 0.1 }, 0.1)
+  .to(allMasks, { width: "0%", duration: 1, stagger: 0.5 });
