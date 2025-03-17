@@ -103,7 +103,6 @@ let box1 = gsap.timeline({
 });
 box1.to("#time", { width: "92%", borderRadius: "20px" });
 
-AOS.init();
 
 gsap.timeline({
   scrollTrigger: {
@@ -127,3 +126,5 @@ gsap.timeline({
 })
   .set(split.words, { duration: 0.3, color: "#EEF0F2", stagger: 0.1 }, 0.1)
   .to(allMasks, { width: "0%", duration: 1, stagger: 0.5 });
+
+AOS.init();
