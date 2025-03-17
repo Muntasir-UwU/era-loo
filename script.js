@@ -48,7 +48,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 document.querySelectorAll("[data-aos]").forEach((elem) => {
   gsap.from(elem, {
-    opacity: 0,
+    opacity: 1,
     y: 50,
     duration: 1,
     scrollTrigger: {
